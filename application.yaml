@@ -1,0 +1,41 @@
+
+
+
+train:
+  batch_size: 4
+  epoch: 20
+  num_workers: 0
+  device: cuda
+  momentum: 0.9
+  Init_lr: 0.001            
+  optimizer: sgd # sgd, adam
+  dataset_path: D:/code/dataset/VOC07+12+test/VOCdevkit
+  lr_decay_type: cos # cos, step
+  nbs: 16 # 基准batch_size大小
+  output: output  # 模型输出位置
+  seed: 42
+  save_interval: 5 # 模型保存间隔
+  resume: ''  # 没有填 ''
+  freeze_epochs: 5 # 多少个epoch后解冻backbone
+
+  cache_dir: output/mosaic 
+
+
+predict:
+  device: cuda
+  mode: image
+  image_path: img/person.jpg
+  model_path: best.pth
+
+
+num_classes: 20
+input_shape: 
+  - 512
+  - 512
+
+
+
+
+
+
+    
